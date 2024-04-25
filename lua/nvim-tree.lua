@@ -308,7 +308,7 @@ local function setup_autocommands(opts)
       pattern = "NvimTree_*",
       callback = function()
         if utils.is_nvim_tree_buf(0) then
-          view.close()
+          pcall(view.close)
         end
       end,
     })
